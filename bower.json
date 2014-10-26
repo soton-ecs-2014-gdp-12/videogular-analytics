@@ -1,0 +1,22 @@
+{
+  "name": "videogular-analytics",
+  "version": "0.1.0",
+  "authors": [
+    "Christopher Baines <cb15g11@soton.ac.uk>"
+  ],
+  "description": "A analytics plugin for Videogular",
+  "main": "analytics.js",
+  "keywords": [
+    "videogular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
