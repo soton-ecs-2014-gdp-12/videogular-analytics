@@ -15,16 +15,22 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							sendEvent(name, details);
 						});
 
-						function onUpdateState(newState) {
+						function onUpdateState(newState, videoTime) {
 							switch (newState) {
 								case VG_STATES.PLAY:
-									sendEvent("play");
+									sendEvent("play", {
+										time: videoTime
+									});
 									break;
 								case VG_STATES.STOP:
-									sendEvent("stop");
+									sendEvent("stop", {
+										time: videoTime
+									});
 									break;
 								case VG_STATES.PAUSE:
-									sendEvent("pause");
+									sendEvent("pause", {
+										time: videoTime
+									});
 									break;
 							}
 						}
@@ -58,7 +64,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							},
 							function (newVal, oldVal) {
 								if (newVal != oldVal) {
-									onUpdateState(newVal);
+									onUpdateState(newVal, API.currentTime);
 								}
 							}
 						);
