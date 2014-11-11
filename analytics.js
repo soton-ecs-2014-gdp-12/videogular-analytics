@@ -8,6 +8,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 					restrict: "E",
 					require: "^videogular",
 					scope: {
+						servers: "=vgAnalyticsServers",
 					},
 					link: function($scope, elem, attr, API) {
 
@@ -47,14 +48,16 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 								content.details = details;
 							}
 
-							$http.post('http://localhost:5000/log', content)
-								.success(function(data, status, headers, config) {
-								// this callback will be called asynchronously
-								// when the response is available
-							}).error(function(data, status, headers, config) {
-								console.error("error reporting event to the server");
-								// called asynchronously if an error occurs
-								// or server returns response with an error status.
+							$scope.servers.forEach(function(server) {
+								$http.post(server + 'log', content)
+									.success(function(data, status, headers, config) {
+									// this callback will be called asynchronously
+									// when the response is available
+								}).error(function(data, status, headers, config) {
+									console.error("error reporting event to the server");
+									// called asynchronously if an error occurs
+									// or server returns response with an error status.
+								});
 							});
 						}
 
