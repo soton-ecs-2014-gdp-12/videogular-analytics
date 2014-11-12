@@ -1,10 +1,22 @@
-[![Stories in Ready](https://badge.waffle.io/soton-ecs-2014-gdp-12/videogular-questions.png?label=ready&title=Ready)](https://waffle.io/soton-ecs-2014-gdp-12/videogular-questions)
+videogular-analytics
+====================
 
-This repository is a plugin for the videogular video player that allows quizs and polls during the playback of videos.
+Videogular Analytics is a [Videogular](http://videogular.com/) plugin for
+sending user interaction data to a server. Used on its own, it will send play,
+pause and stop events, but other videogular plugins can also provide
+information that will also been sent to the server.
 
-See [videogular questions example](https://github.com/soton-ecs-2014-gdp-12/videogular-questions-example) repository for examples to use with this repsitory.
+Installation
+------------
 
-# Server Comunication
+Videogular Analytics can be installed with Bower:
+
+```
+bower install videogular-analytics
+```
+
+Usage
+-----
 
 When used alone, the videogular-analytics plugin will report play, pause and
 stop events. Examples for each of these are given below:
