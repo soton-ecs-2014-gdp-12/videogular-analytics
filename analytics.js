@@ -16,29 +16,9 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							sendEvent(name, details);
 						});
 
-						function onUpdateState(newState, videoTime) {
-							switch (newState) {
-								case VG_STATES.PLAY:
-									sendEvent("play", {
-										time: videoTime
-									});
-									break;
-								case VG_STATES.STOP:
-									sendEvent("stop", {
-										time: videoTime
-									});
-									break;
-								case VG_STATES.PAUSE:
-									sendEvent("pause", {
-										time: videoTime
-									});
-									break;
-							}
-						}
-
 						function sendEvent(name, details) {
 							var now = new Date();
-							
+
 							var content = {
 								time: now.toISOString(),
 								name: name,
@@ -61,16 +41,15 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							});
 						}
 
-						$scope.$watch(
-							function () {
-								return API.currentState;
-							},
-							function (newVal, oldVal) {
-								if (newVal !== oldVal) {
-									onUpdateState(newVal, API.currentTime);
-								}
-							}
-						);
+						function reportMediaElementEvent(event) {
+							sendEvent(event.type, { time: API.currentTime });
+						}
+
+						var eventsToReport = ['play', 'pause', 'stop'];
+
+						for (var i in eventsToReport) {
+							API.mediaElement[0].addEventListener(eventsToReport[i], reportMediaElementEvent);
+						}
 					},
 				};
 			}
