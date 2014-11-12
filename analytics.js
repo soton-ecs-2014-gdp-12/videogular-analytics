@@ -41,7 +41,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							
 							var content = {
 								time: now.toISOString(),
-								name: name
+								name: name,
 							};
 
 							if (typeof(details) !== "undefined") {
@@ -66,7 +66,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 								return API.currentState;
 							},
 							function (newVal, oldVal) {
-								if (newVal != oldVal) {
+								if (newVal !== oldVal) {
 									onUpdateState(newVal, API.currentTime);
 								}
 							}
@@ -75,5 +75,5 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 				};
 			}
 		]
-	)
+	);
 })();
