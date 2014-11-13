@@ -45,7 +45,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 							sendEvent(event.type, { time: API.currentTime });
 						}
 
-						var eventsToReport = ['play', 'pause', 'stop'];
+						var eventsToReport = ['play', 'pause', 'stop', 'seeking', 'seeked'];
 
 						for (var i in eventsToReport) {
 							API.mediaElement[0].addEventListener(eventsToReport[i], reportMediaElementEvent);
