@@ -13,6 +13,7 @@ angular.module("uk.ac.soton.ecs.videogular.plugins.analytics", [])
 					link: function($scope, elem, attr, API) {
 
 						$scope.$parent.$on("analytics", function(event, name, details) {
+							console.log("got analytics event " + name);
 							sendEvent(name, details);
 						});
 
