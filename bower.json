@@ -1,5 +1,6 @@
 {
 	"name": "videogular-analytics",
+	"version": "0.1.0",
 	"homepage": "https://github.com/soton-ecs-2014-gdp-12/videogular-analytics",
 	"description": "Videogular plugin for sending information to a server",
 	"license": "MIT",
