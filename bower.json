@@ -4,10 +4,10 @@
 	"description": "Videogular plugin for sending information to a server",
 	"license": "MIT",
 	"authors": [
-		{ "name": "Christopher Baines" },
-		{ "name": "Harry Cutts" }
+		"Christopher Baines <cb15g11@soton.ac.uk>",
+		"Christopher Hewett <chewett@hotmail.co.uk>",
+		"Harry Cutts <eternal.linux@gmail.com>",
 	],
-
 	"main": "analytics.js",
 	"dependencies": {
 		"videogular": "latest"
