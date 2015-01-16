@@ -6,7 +6,7 @@
 	"authors": [
 		"Christopher Baines <cb15g11@soton.ac.uk>",
 		"Christopher Hewett <chewett@hotmail.co.uk>",
-		"Harry Cutts <eternal.linux@gmail.com>",
+		"Harry Cutts <eternal.linux@gmail.com>"
 	],
 	"main": "analytics.js",
 	"dependencies": {
